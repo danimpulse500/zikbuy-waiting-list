@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZIKBUY Dashboard</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      --bg-color: #f8f9fa;
+      --card-color: #ffffff;
+      --text-color: #000000;
+      --header-bg: #ffffff;
+      --border-color: #dee2e6;
+    }
+
+    body.dark-mode {
+      --bg-color: #121212;
+      --card-color: #1e1e1e;
+      --text-color: #f1f1f1;
+      --header-bg: #1a1a1a;
+      --border-color: #333;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    .bg-white, .card, .sidebar, .task-card, .referral-card {
+      background-color: var(--card-color) !important;
+      color: var(--text-color);
+    }
+
+    header {
+      background-color: var(--header-bg) !important;
+    }
+
+    .referral-card {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .referral-card:hover {
+      transform: scale(1.02);
+    }
+
+    .icon-circle {
+      background: #e7f5ec;
+      padding: 0.75rem;
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dark-mode .icon-circle {
+      background: #2d3e2f;
+    }
+
+    .btn-invite {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .btn-invite:hover {
+      background-color: #218838;
+    }
+
+    .task-card {
+      border-left: 4px solid #28a745;
+    }
+
+    .task-completed i {
+      color: #28a745;
+    }
+
+    .task-pending i {
+      color: #6c757d;
+    }
+
+    .sidebar {
+    background-color: var(--card-color);
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    @media (min-width: 768px) {
+    .sidebar {
+        min-height: 100vh;
+    }
+    }
+
+
+    .dark-toggle {
+      cursor: pointer;
+    }
+
+    .rounded-circle {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .list-group-item {
+      background-color: transparent;
+      border-color: var(--border-color);
+      color: var(--text-color);
+    }
+
+    .dark-mode .btn-outline-secondary,
+    .dark-mode .btn-outline-primary {
+      border-color: #ccc;
+      color: #ccc;
+    }
+
+    .dark-mode .btn-outline-secondary:hover,
+    .dark-mode .btn-outline-primary:hover {
+      border-color: #fff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body class="dark-mode">
+
+<!-- Header -->
+<header class="shadow-sm p-3 d-flex justify-content-between align-items-center">
+  <h5 class="fw-bolder font-monospace m-0">ZIKBUY</h5>
+  <div class="d-flex align-items-center gap-3">
+    <span class="small">Referral Dashboard</span>
+    <i class="bi bi-moon-fill fs-5 dark-toggle " onclick="toggleDarkMode()" title="Toggle Dark Mode"></i>
+  </div>
+</header>
+
+<!-- Layout -->
+<div class="container-fluid">
+  <div class="row flex-wrap">
+
+    <!-- Sidebar -->
+    <aside class="col-lg-3 col-md-4 sidebar shadow-sm pt-4 d-flex flex-column align-items-center">
+      <img src="https://ui-avatars.com/api/?name=Chukwuchebem+David&background=28a745&color=fff" alt="User" class="rounded-circle mb-3" width="80" height="80">
+      <h5 class="fw-semibold">Chukwuchebem David</h5>
+      <p class="small">User ID: #ZIK12345</p>
+
+      <button class="btn btn-dark w-75 mt-4">
+        <a href="./wallet.html" class="nav-link d-flex justify-content-between align-items-center">
+
+            <span><i class="fas fa-wallet me-2"></i> Wallet</span>
+            <i class="fas fa-chevron-right"></i>
+        </a>
+      </button>
+
+      <button class="btn btn-outline-success w-75 my-3">
+        <a href="./leaderboard.html" class="nav-link">
+            <i class="fas fa-arrow-up-right-dots me-2"></i> Leaderboard
+        </a>
+        
+      </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="col-lg-9 col-md-8 p-4">
+      <div class="row g-4">
+
+        <!-- Wallet -->
+        <div class="col-sm-6">
+          <div class="card referral-card p-4 rounded-4 border-0">
+            <div class="d-flex align-items-center mb-3">
+              <div class="icon-circle me-3"><i class="fas fa-wallet text-success"></i></div>
+              <h6 class="mb-0 fw-semibold">Wallet Balance</h6>
+            </div>
+            <h3 class="fw-bold">$ 0</h3>
+          </div>
+        </div>
+
+        <!-- Points -->
+        <div class="col-sm-6">
+          <div class="card referral-card p-4 rounded-4 border-0">
+            <div class="d-flex align-items-center mb-3">
+              <div class="icon-circle me-3"><i class="fas fa-star text-warning"></i></div>
+              <h6 class="mb-0 fw-semibold">Total Points</h6>
+            </div>
+            <h3 class="fw-bold">0 Points</h3>
+          </div>
+        </div>
+
+        <!-- Referral Link -->
+        <div class="col-12">
+          <div class="card referral-card p-4 rounded-4 border-0">
+            <h6 class="fw-semibold mb-3">Your Referral Link</h6>
+            <div class="input-group">
+              <input type="text" class="form-control" value="https://zikbuy.com/invite?ref=ZIK12345" id="refLink" readonly />
+              <button class="btn btn-outline-secondary" onclick="copyLink()"><i class="fas fa-copy"></i></button>
+            </div>
+            <button class="btn btn-invite mt-3 w-100"><i class="fas fa-share-nodes me-2"></i> Invite Friends</button>
+          </div>
+        </div>
+
+        <!-- Referral Summary -->
+        <div class="col-12">
+          <div class="card referral-card p-4 rounded-4 border-0">
+            <h6 class="fw-semibold mb-3">Referral Summary</h6>
+            <div class="row text-center">
+              <div class="col">
+                <h4 class="fw-bold">0</h4>
+                <p class="small">People Referred</p>
+              </div>
+              <div class="col">
+                <h4 class="fw-bold">0</h4>
+                <p class="small">Task Completed</p>
+              </div>
+              <div class="col">
+                <h4 class="fw-bold">0</h4>
+                <p class="small">Total Points</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tasks -->
+        <div class="col-12">
+          <div class="card task-card p-4 rounded-4 border-0">
+            <h6 class="fw-semibold mb-3"><i class="fas fa-tasks me-2 text-success"></i> Complete Tasks</h6>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center task-pending">
+                <span><i class="fab fa-instagram me-2"></i> Follow us on Instagram</span>
+                <a href="https://instagram.com/zikbuy" target="_blank" class="btn btn-sm btn-outline-primary">Follow</a>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center task-completed">
+                <span><i class="fab fa-twitter me-2"></i> Follow us on X</span>
+                <span class="rounded-circle text-success p-1" style="width: 24px; height: 24px;"><i class="fas fa-check-circle"></i></span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center task-pending">
+                <span><i class="fab fa-telegram me-2"></i> Join our Telegram</span>
+                <a href="https://t.me/zikbuy" target="_blank" class="btn btn-sm btn-outline-primary">Join</a>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center task-pending">
+                <span><i class="fas fa-envelope me-2"></i> Subscribe to Newsletter</span>
+                <a href="#" class="btn btn-sm btn-outline-primary">Subscribe</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function copyLink() {
+    const link = document.getElementById("refLink").value;
+    navigator.clipboard.writeText(link);
+    alert("Referral link copied!");
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
+<script src="./scripts/theme.js"></script>
+
+</body>
+</html>

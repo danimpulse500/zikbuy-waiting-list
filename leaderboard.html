@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZIKBUY Leaderboard</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      --bg-color: #f8f9fa;
+      --card-color: #ffffff;
+      --text-color: #000000;
+      --header-bg: #ffffff;
+      --border-color: #dee2e6;
+    }
+
+    body.dark-mode {
+      --bg-color: #121212;
+      --card-color: #1e1e1e;
+      --text-color: #f1f1f1;
+      --header-bg: #1a1a1a;
+      --border-color: #333;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    .card, header, .sidebar {
+      background-color: var(--card-color) !important;
+      color: var(--text-color);
+    }
+
+    .sidebar {
+      min-height: 100vh;
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .dark-toggle {
+      cursor: pointer;
+    }
+
+    .leaderboard-card {
+      transition: all 0.3s ease;
+    }
+
+    .leaderboard-card:hover {
+      transform: scale(1.01);
+    }
+
+    .rounded-circle {
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+
+    table thead {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .dark-mode table thead {
+      background-color: #1a8731;
+    }
+
+    .badge-top {
+      background-color: gold;
+      color: black;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="dark-mode">
+
+<!-- Header -->
+<header class="shadow-sm p-3 d-flex justify-content-between align-items-center">
+  <h5 class="fw-bolder font-monospace m-0">ZIKBUY</h5>
+  <div class="d-flex align-items-center gap-3">
+    <span class="small">Leaderboard</span>
+    <i class="bi bi-moon-fill fs-5 dark-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode"></i>
+  </div>
+</header>
+
+<!-- Layout -->
+<div class="container-fluid">
+  <div class="row flex-wrap">
+
+    <!-- Sidebar -->
+    <aside class="col-lg-3 col-md-4 sidebar shadow-sm">
+      <img src="https://ui-avatars.com/api/?name=Chukwuchebem+David&background=28a745&color=fff" alt="User" class="rounded-circle mb-3" width="80" height="80">
+      <h5 class="fw-semibold">Chukwuchebem David</h5>
+      <p class="small">User ID: #ZIK12345</p>
+
+      <a href="./dashboard.html" class="btn btn-outline-success w-75 mt-3">
+        <i class="fas fa-arrow-left me-2"></i> Back to Dashboard
+      </a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="col-lg-9 col-md-8 p-4">
+      <div class="card leaderboard-card p-4 rounded-4 border-0">
+        <h5 class="fw-bold mb-4">🏆 Top Referrers</h5>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Referrals</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+              <!-- Populated with JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+  </div>
+</div>
+
+<script>
+  const leaderboardData = [
+    { name: "Chukwuchebem David", referrals: 35, points: 450 },
+    { name: "Jane Doe", referrals: 25, points: 300 },
+    { name: "John Smith", referrals: 20, points: 260 },
+    { name: "Adaobi Umeh", referrals: 15, points: 190 },
+    { name: "Peter Obi", referrals: 10, points: 120 },
+  ];
+
+  const tbody = document.getElementById("leaderboard-body");
+  leaderboardData.forEach((user, index) => {
+    const row = document.createElement("tr");
+    const rankBadge = index === 0 ? '<span class="badge badge-top">#1</span>' : `#${index + 1}`;
+    row.innerHTML = `
+      <td>${rankBadge}</td>
+      <td>${user.name}</td>
+      <td>${user.referrals}</td>
+      <td>${user.points}</td>
+    `;
+    tbody.appendChild(row);
+  });
+
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+  }
+</script>
+
+</body>
+</html>
