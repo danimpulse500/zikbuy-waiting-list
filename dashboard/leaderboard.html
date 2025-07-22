@@ -99,10 +99,10 @@
   <div class="row flex-wrap">
 
     <!-- Sidebar -->
-    <aside class="col-lg-3 col-md-4 sidebar shadow-sm">
-      <img src="https://ui-avatars.com/api/?name=Chukwuchebem+David&background=28a745&color=fff" alt="User" class="rounded-circle mb-3" width="80" height="80">
-      <h5 class="fw-semibold">Chukwuchebem David</h5>
-      <p class="small">User ID: #ZIK12345</p>
+    <aside class="col-lg-3 col-md-4 sidebar shadow-sm pt-4 d-flex flex-column align-items-center">
+      <img src="" id="avatar" alt="User" class="rounded-circle mb-3" width="80" height="80">
+      <h5 class="fw-semibold" id="userFullName">Chukwuchebem David</h5>
+      <p class="small">User ID: <span id="refCode">...</span></p>
 
       <a href="./dashboard.html" class="btn btn-outline-success w-75 mt-3">
         <i class="fas fa-arrow-left me-2"></i> Back to Dashboard
@@ -110,7 +110,7 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="col-lg-9 col-md-8 p-4">
+    <main class="col-lg-9 col-md-8 p-4 vh-100">
       <div class="card leaderboard-card p-4 rounded-4 border-0">
         <h5 class="fw-bold mb-4">🏆 Top Referrers</h5>
         <div class="table-responsive">
@@ -159,6 +159,55 @@
   function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
   }
+</script>
+<script>
+    function copyLink() {
+    const link = document.getElementById("refLink").value;
+    navigator.clipboard.writeText(link);
+    alert("Referral link copied!");
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+
+const token = localStorage.getItem('token');
+
+fetch('http://127.0.0.1:8000/auth/users/me/', {
+  method: 'GET',
+  headers: {
+    'Authorization': `Token ${token}`,
+    'Content-Type': 'application/json'
+  }
+})
+  .then(res => {
+    if (!res.ok) {
+      throw new Error('Failed to fetch user data');
+    }
+    return res.json();
+  })
+  .then(user => {
+    // store user data
+    localStorage.setItem('user', JSON.stringify(user));
+
+    // update the UI
+    document.getElementById('userFullName').innerText = user.full_name || 'N/A';
+    document.getElementById('refCode').innerText = user.referral_code || 'N/A';
+    // document.getElementById('refLink').value = user.referral_link || '';
+    // document.getElementById('referralPoints').innerText = (user.referral_points || 0) + ' Points';
+    // document.getElementById('referredCount').innerText = user.number_of_people_referred || 0;
+    // document.getElementById('totalPoints').innerText = (user.referral_points || 0) + '';
+
+    const avatarName = user.full_name ? user.full_name.replace(' ', '+') : 'User';
+    document.getElementById('avatar').src = `https://ui-avatars.com/api/?name=${avatarName}&background=28a745&color=fff`;
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Please log in again.");
+    window.location.href = "/index.html";
+  });
+
+
 </script>
 
 </body>

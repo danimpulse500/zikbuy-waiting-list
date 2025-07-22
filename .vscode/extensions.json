@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "anbuselvanrocky.bootstrap5-vscode",
-        "hossaini.bootstrap-intellisense"
+        "hossaini.bootstrap-intellisense",
+        "esbenp.prettier-vscode"
     ]
 }

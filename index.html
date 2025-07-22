@@ -13,6 +13,20 @@
       padding-top: 100px;
     }
 
+    .form-section { display: none; }
+    .form-section.active { display: block; }
+    .tab-btn.active {
+      /* background: linear-gradient(to right, #28a745, #a8e063); */
+      background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      color: black;
+    }
+
     @media (max-width: 768px) {
       body {
         padding-top: 140px;
@@ -74,7 +88,7 @@
             <a class="nav-link text-dark-emphasis" href="#">Roadmap</a>
           </li>
         </ul>
-        <button class="btn green-btn fw-semibold px-4">Join Waitlist</button>
+        <button class="btn green-btn fw-semibold px-4" data-bs-toggle="modal" data-bs-target="#authModal">Join Waitlist</button>
       </div>
     </div>
   </nav>
@@ -95,9 +109,7 @@
           </h1>
           <p class="lead">Shop smarter, not harder. Zikbuy delivers the deals you want instantly.</p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start flex-wrap">
-            <a href="./dashboard.html" class="nav-link">
-              <button class="btn green-btn px-4 me-md-2 fw-bold p-3">Continue to Dashboard</button>
-            </a>
+            <button class="btn green-btn px-4 me-md-2 fw-bold p-3" data-bs-toggle="modal" data-bs-target="#authModal">Continue to Dashboard</button>
             <a href="#features" class="nav-link">
               <button class="btn bg-white shadow px-4 fw-bold py-3 text-dark-emphasis">See Features <i class="fas fa-arrow-right"></i></button>
             </a>
@@ -105,23 +117,28 @@
         </div>
         <div class="col-12 col-lg-6">
           <div class="card shadow-lg border-0 rounded-4 p-4 bg-white">
-            <form id="waitlistFormTop" method="post">
+            <p id="response"></p>
+            <form id="registerForm" method="post">
               <div class="form-floating mb-3">
-                <input type="text" name="full_name" class="form-control rounded-3" id="fullNameTop" placeholder="Full Name" required />
-                <label for="fullNameTop">Full Name *</label>
+                <input type="text" name="username" class="form-control  rounded-3" id="username" placeholder="Username" required />
+                <label for="username">Username *</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="email" name="email" class="form-control rounded-3" id="emailTop" placeholder="Email" required />
+                <input type="email" name="email" class="form-control  rounded-3" id="emailTop" placeholder="Email" required />
                 <label for="emailTop">Email Address *</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" name="company" class="form-control rounded-3" id="companyTop" placeholder="Company" />
-                <label for="companyTop">Company (optional)</label>
+                <input type="password" name="password" class="form-control  rounded-3" id="password" placeholder="Password" />
+                <label for="password">Password</label>
               </div>
-              <div class="form-floating mb-4">
-                <textarea name="interest" class="form-control rounded-3" id="interestTop" placeholder="Tell us..." style="height: 70px"></textarea>
+              <div class="form-floating mb-3">
+                <input type="text" name="referred_by_code" class="form-control  rounded-3" id="referred_by_code" placeholder="Refferal Code" />
+                <label for="referred_by_code">Refferal Code (optional)</label>
+              </div>
+              <!-- <div class="form-floating mb-4">
+                <textarea name="interest" class="form-control  rounded-3" id="interestTop" placeholder="Tell us..." style="height: 70px"></textarea>
                 <label for="interestTop">What interests you about Zikbuy?</label>
-              </div>
+              </div> -->
               <div class="d-grid">
                 <button type="submit" class="btn green-btn btn-lg">
                   <i class="fas fa-envelope-open-text me-2"></i> Join Waitlist
@@ -223,7 +240,7 @@
   </section>
 
   <!-- Bottom Waitlist Form -->
-  <section class="waitlist bg-white py-5" id="waitlist">
+  <!-- <section class="waitlist bg-white py-5" id="waitlist">
     <div class="container text-center">
       <button class="text-dark-emphasis fw-semibold bg-white shadow-sm rounded-5 px-4 my-4 btn" style="cursor: default;">
         <i class="fas fa-shopping-cart text-warning"></i> Choose Zikbuy
@@ -239,19 +256,19 @@
         <small class="text-dark-emphasis text-center d-block fw-medium pb-4">Be the first to experience seamless marketing</small>
         <form id="waitlistFormBottom" method="post">
           <div class="form-floating mb-3">
-            <input type="text" name="full_name" class="form-control rounded-3" id="fullNameBottom" placeholder="Full Name" required />
+            <input type="text" name="username" class="form-control  rounded-3" id="fullNameBottom" placeholder="Full Name" required />
             <label for="fullNameBottom">Full Name *</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="email" name="email" class="form-control rounded-3" id="emailBottom" placeholder="Email" required />
+            <input type="email" name="email" class="form-control  rounded-3" id="emailBottom" placeholder="Email" required />
             <label for="emailBottom">Email Address *</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" name="company" class="form-control rounded-3" id="companyBottom" placeholder="Company" />
-            <label for="companyBottom">Company (optional)</label>
+            <input type="text" name="refferal" class="form-control  rounded-3" id="refferalBottom" placeholder="refferal" />
+            <label for="refferalBottom">refferal (optional)</label>
           </div>
           <div class="form-floating mb-4">
-            <textarea name="interest" class="form-control rounded-3" id="interestBottom" placeholder="Tell us..." style="height: 70px"></textarea>
+            <textarea name="interest" class="form-control  rounded-3" id="interestBottom" placeholder="Tell us..." style="height: 70px"></textarea>
             <label for="interestBottom">What interests you about Zikbuy?</label>
           </div>
           <div class="d-grid">
@@ -263,7 +280,7 @@
         </form>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Footer -->
   <footer class="container py-4 border-top">
@@ -279,6 +296,175 @@
       </ul>
     </div>
   </footer>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content p-4">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">Continue to Dashboard</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+
+      <!-- Tabs -->
+      <div class="d-flex justify-content-around my-3  p-3 rounded">
+        <button id="signup-btn" class="btn py-2 tab-btn active w-100" onclick="showTab('signup')">Sign Up</button>
+        <button id="login-btn" class="btn py-2 tab-btn w-100" onclick="showTab('login')">Log In</button>
+      </div>
+
+      <!-- Signup Form -->
+      <form id="signup" class="form-section active">
+        <p class="text-dark">We integrated a referral system, were you refer others and get referral point. <a href="" class="">Learn more</a></p>
+        
+        <div class="mb-3 form-floating">
+          <input type="text" id="fullName" placeholder="Full Name" class="form-control " name="full_name" required />
+          <label class="fullName">Full Name</label>
+        </div>
+        <div class="mb-3 form-floating">
+          <input type="text" id="username" placeholder="Username" class="form-control " name="username" required />
+          <label class="username">Username</label>
+        </div>
+        <div class="mb-3 form-floating">
+          <input type="email" id="email" placeholder="Email address" class="form-control " name="email" required />
+          <label class="email">Email address</label>
+        </div>
+        <div class="mb-3 form-floating">
+          <input type="password" id="password" placeholder="Password" class="form-control " name="password" required />
+          <label class="password">Password</label>
+        </div>
+        <div class="mb-3 form-floating">
+          <input type="text" class="form-control " id="ref" placeholder="Referral Code (optional)" name="referred_by_code" />
+          <label class="ref">Referral Code (optional)</label>
+        </div>
+        <button type="submit" class="btn green-btn w-100 p-3">Sign Up</button>
+      </form>
+
+      <!-- Login Form -->
+      <form id="login" class="form-section">
+        <div class="mb-3 form-floating">
+          <input type="email" id="email" placeholder="Email address" class="form-control " name="email" required />
+          <label class="email">Email address</label>
+        </div>
+         <div class="mb-3 form-floating">
+          <input type="password" id="password" placeholder="Password" class="form-control " name="password" required />
+          <label class="password">Password</label>
+        </div>
+        <button type="submit" class="btn green-btn w-100 p-3">Log In</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS & Dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function showTab(tab) {
+    document.querySelectorAll('.form-section').forEach(div => div.classList.remove('active'));
+    document.getElementById(tab).classList.add('active');
+
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tab + '-btn').classList.add('active');
+  }
+
+  // Split full name into first and last
+  function splitFullName(fullName) {
+    const parts = fullName.trim().split(' ');
+    return {
+      first_name: parts[0],
+      last_name: parts.length > 1 ? parts.slice(1).join(' ') : ''
+    };
+  }
+
+  // Signup Form Submit
+  document.getElementById('signup').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const { first_name, last_name } = splitFullName(form.full_name.value);
+
+    const data = {
+      username: form.username.value,
+      email: form.email.value,
+      password: form.password.value,
+      referred_by_code: form.referred_by_code.value || undefined,
+      first_name,
+      last_name
+    };
+
+    try {
+      const res = await fetch('http://127.0.0.1:8000/auth/users/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        alert('Signup successful! Please log in.');
+        showTab('login');
+      } else {
+        const error = await res.json();
+        alert('Signup failed: ' + JSON.stringify(error));
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Signup error. Please try again.');
+    }
+  });
+
+  // Login Form Submit
+  document.getElementById('login').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const form = e.target;
+
+    const data = {
+      email: form.email.value,
+      password: form.password.value
+    };
+
+    try {
+      const res = await fetch('http://127.0.0.1:8000/auth/token/login/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        const json = await res.json();
+        const token = json.auth_token;
+        localStorage.setItem('token', token);
+
+        // Fetch user profile
+        const profileRes = await fetch('http://127.0.0.1:8000/auth/users/me/', {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Token ' + token
+          }
+        });
+
+        if (profileRes.ok) {
+          const user = await profileRes.json();
+          localStorage.setItem('user', JSON.stringify(user));
+          alert('Login successful!');
+          window.location.href = '/dashboard/dashboard.html';
+        } else {
+          alert('Failed to retrieve user profile.');
+        }
+      } else {
+        const error = await res.json();
+        alert('Login failed: ' + JSON.stringify(error));
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Login error. Please try again.');
+    }
+  });
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
 </body>
