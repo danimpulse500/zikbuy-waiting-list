@@ -173,7 +173,7 @@
 
 const token = localStorage.getItem('token');
 
-fetch('http://127.0.0.1:8000/auth/users/me/', {
+fetch('https://zikbuy-backend.onrender.com/auth/users/me/', {
   method: 'GET',
   headers: {
     'Authorization': `Token ${token}`,
