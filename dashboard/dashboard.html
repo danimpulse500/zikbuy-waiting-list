@@ -261,6 +261,7 @@
 <script>
     function copyCode() {
     const Code = document.getElementById("refCode").value;
+    const codeEl = document.getElementById('refCode').style.color="black"
     navigator.clipboard.writeText(Code);
     alert("Referral Code copied!");
   }
