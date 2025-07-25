@@ -6,12 +6,12 @@
   <title>ZIKBUY Dashboard</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <Code href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Bootstrap & Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <Code href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <Code rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <Code rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Custom Styles -->
   <style>
@@ -153,18 +153,18 @@
       <p class="small">User ID: <span id="refCode">...</span></p>
 
       <button class="btn btn-dark w-75 mt-4">
-        <a href="../dashboard/wallet.html" class="nav-link d-flex justify-content-between align-items-center">
+        <a href="../dashboard/wallet.html" class="nav-Code d-flex justify-content-between align-items-center">
             <span><i class="fas fa-wallet me-2"></i> Wallet</span>
             <i class="fas fa-chevron-right"></i>
         </a>
       </button>
 
       <button class="btn btn-outline-success w-75 my-3">
-        <a href="./leaderboard.html" class="nav-link">
+        <a href="./leaderboard.html" class="nav-Code">
             <i class="fas fa-arrow-up-right-dots me-2"></i> Leaderboard
         </a>
       </button>
-      <a href="#"  id="logout" class="nav-link pb-4">Logout</a>
+      <a href="#"  id="logout" class="nav-Code pb-4">Logout</a>
 
     </aside>
 
@@ -194,15 +194,15 @@
           </div>
         </div>
 
-        <!-- Referral Link -->
+        <!-- Referral Code -->
         <div class="col-12">
           <div class="card referral-card p-4 rounded-4 border-0">
-            <h6 class="fw-semibold mb-3">Your Referral Link</h6>
+            <h6 class="fw-semibold mb-3">Your Referral Code</h6>
             <div class="input-group">
-              <input type="text" class="form-control" id="refLink" readonly />
-              <button class="btn btn-outline-secondary" onclick="copyLink()"><i class="fas fa-copy"></i></button>
+              <input type="text" class="form-control" id="refCode" readonly />
             </div>
-            <button class="btn btn-invite mt-3 w-100"><i class="fas fa-share-nodes me-2"></i> Invite Friends</button>
+            <button class="btn btn-outline-success" onclick="copyCode()"><i class="fas fa-copy"></i></button>
+            <!-- <button class="btn btn-invite mt-3 w-100"><i class="fas fa-share-nodes me-2"></i> Invite Friends</button> -->
           </div>
         </div>
 
@@ -228,7 +228,7 @@
         </div>
 
         <!-- Tasks -->
-        <div class="col-12">
+        <!-- <div class="col-12">
           <div class="card task-card p-4 rounded-4 border-0">
             <h6 class="fw-semibold mb-3"><i class="fas fa-tasks me-2 text-success"></i> Complete Tasks</h6>
             <ul class="list-group list-group-flush">
@@ -250,7 +250,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </main>
@@ -259,10 +259,10 @@
 
 
 <script>
-    function copyLink() {
-    const link = document.getElementById("refLink").value;
-    navigator.clipboard.writeText(link);
-    alert("Referral link copied!");
+    function copyCode() {
+    const Code = document.getElementById("refCode").value;
+    navigator.clipboard.writeText(Code);
+    alert("Referral Code copied!");
   }
 
   function toggleDarkMode() {
@@ -291,7 +291,7 @@ fetch('https://zikbuy-backend.onrender.com/auth/users/me/', {
     // update the UI
     document.getElementById('userFullName').innerText = user.full_name || 'N/A';
     document.getElementById('refCode').innerText = user.referral_code || 'N/A';
-    document.getElementById('refLink').value = user.referral_link || '';
+    document.getElementById('refCode').value = user.referral_Code || '';
     document.getElementById('referralPoints').innerText = (user.referral_points || 0) + ' Points';
     document.getElementById('referredCount').innerText = user.number_of_people_referred || 0;
     document.getElementById('totalPoints').innerText = (user.referral_points || 0) + '';
