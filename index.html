@@ -79,7 +79,20 @@
             <a class="nav-link text-dark-emphasis" href="#features">Features</a>
           </li>
 
+          <!-- Dropdown Menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark-emphasis" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#about">About Us</a></li>
+              <li><a class="dropdown-item" href="#contact">Contact</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#faq">FAQ</a></li>
+            </ul>
+          </li>
         </ul>
+
         <button class="btn green-btn fw-semibold px-4" data-bs-toggle="modal" data-bs-target="#authModal">Join Waitlist</button>
       </div>
     </div>
@@ -88,10 +101,11 @@
 
 
 
+
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="container px-4 py-">
-      <div class="row flex-lg-row align-items-center g-5 py-5">
+      <div class="row flex-lg-row align-items-center g-5 py-lg-5">
         <div class="col-12 col-lg-6">
           <button class="text-dark-emphasis fw-semibold bg-white shadow-sm rounded-5 px-4 my-4 btn" style="cursor: default;">
             <i class="fas fa-shopping-cart text-warning"></i> E-commerce
@@ -108,7 +122,7 @@
           </div>
         </div>
         <div class="col-12 col-lg-6">
-          <img src="./assets/images/shopping.png" width="500px" alt="">
+          <img src="./assets/images/shopping.png" width="100%" alt="">
           <!-- <div class="card shadow-lg border-0 rounded-4 p-4 bg-white">
             <p id="response"></p>
             <form id="registerForm" method="post">
@@ -148,7 +162,7 @@
 
   <!-- Why Us Section -->
   <section class="why-us bg-white py-5" id="features">
-    <div class="container text-center">
+    <div class="container-lg text-center">
       <button class="text-dark-emphasis fw-semibold bg-white shadow-sm rounded-5 px-4 my-4 btn" style="cursor: default;">
         <i class="fas fa-bolt text-info"></i> Why Zikbuy
       </button>
@@ -156,7 +170,7 @@
         Zikbuy uses intelligent algorithms to recommend products based on your interests, browsing behavior, and shopping trends.
       </p>
       <div class="d-flex justify-content-center">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4 pt-4 justify-content-center w-75">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4 pt-4 justify-content-center w-7 w-100">
           <div class="col">
             <div class="card border-0 text-dark-emphasis bg-white shadow p-4 h-100 rounded-4">
               <div class="icon-circle mb-3"><i class="fas fa-user-cog text-green"></i></div>
@@ -199,7 +213,7 @@
       <h1 class="fw-medium"><span class="text-gradient">Anyone that wants to sell or buy</span></h1>
       <p class="text-dark-emphasis fs-6">From buyers to freelancers, Zikbuy works for you.</p>
       <div class="d-flex justify-content-center">
-        <div class="row row-cols-1 row-cols-md-3 g-4 pt-4 w-75">
+        <div class="row row-cols-1 row-cols-md-3 g-4 pt-4 w-100">
           <div class="col">
             <a href="plumbing.html" class="text-decoration-none text-reset">
               <div class="service-card shadow">
@@ -355,6 +369,7 @@
 </div>
 
 <!-- Bootstrap JS & Dependencies -->
+ 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 
