@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./assets/style/animate.css" />
   <style>
     body {
       padding-top: 100px;
@@ -76,12 +77,12 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
         <ul class="navbar-nav mb-2 mb-lg-0 me-3">
           <li class="nav-item">
-            <a class="nav-link text-dark-emphasis" href="#features">Features</a>
+            <a class="nav-link text-dark" href="#features">Features</a>
           </li>
 
           <!-- Dropdown Menu -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-dark-emphasis" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               More
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -93,7 +94,7 @@
           </li>
         </ul>
 
-        <button class="btn green-btn fw-semibold px-4" data-bs-toggle="modal" data-bs-target="#authModal">Join Waitlist</button>
+        <button class="btn green-btn fw-semibold text- px-4" data-bs-toggle="modal" data-bs-target="#authModal">Join Waitlist</button>
       </div>
     </div>
   </nav>
@@ -107,53 +108,22 @@
     <div class="container px-4 py-">
       <div class="row flex-lg-row align-items-center g-5 py-lg-5">
         <div class="col-12 col-lg-6">
-          <button class="text-dark-emphasis fw-semibold bg-white shadow-sm rounded-5 px-4 my-4 btn" style="cursor: default;">
+          <button class="text-dark fw-semibold text- bg-white shadow-sm rounded-5 px-4 my-4 btn" style="cursor: default;">
             <i class="fas fa-shopping-cart text-warning"></i> E-commerce
           </button>
           <h1 class="display-5 fw-bold lh-1 mb-3">
-            <span class="text-gradient">Zikbuy</span><br>Revolutionizing Online Shopping
+            <span class="text-gradient">Zikbuy</span><br>Your #1 Digital Market Place
           </h1>
-          <p class="lead">Shop smarter, not harder. Zikbuy delivers the deals you want instantly.</p>
+          <p class="lead">Zikbuy is your trusted onine market, we trade value to people of value.</p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start flex-wrap">
-            <button class="btn green-btn px-4 me-md-2 fw-bold p-3" data-bs-toggle="modal" data-bs-target="#authModal">Continue to Dashboard</button>
+            <button class="btn green-btn px-4 me-md-2 fw-bold p-3" data-bs-toggle="modal" data-bs-target="#authModal">Join the Waitlist</button>
             <a href="#features" class="nav-link">
-              <button class="btn bg-white shadow px-4 fw-bold py-3 text-dark-emphasis">See Features <i class="fas fa-arrow-right"></i></button>
+              <button class="btn bg-white shadow px-4 fw-bold py-3 text-dark">See Features <i class="fas fa-arrow-right"></i></button>
             </a>
           </div>
         </div>
         <div class="col-12 col-lg-6">
           <img src="./assets/images/shopping.png" width="100%" alt="">
-          <!-- <div class="card shadow-lg border-0 rounded-4 p-4 bg-white">
-            <p id="response"></p>
-            <form id="registerForm" method="post">
-              <div class="form-floating mb-3">
-                <input type="text" name="username" class="form-control  rounded-3" id="username" placeholder="Username" required />
-                <label for="username">Username *</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input type="email" name="email" class="form-control  rounded-3" id="emailTop" placeholder="Email" required />
-                <label for="emailTop">Email Address *</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input type="password" name="password" class="form-control  rounded-3" id="password" placeholder="Password" />
-                <label for="password">Password</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input type="text" name="referred_by_code" class="form-control  rounded-3" id="referred_by_code" placeholder="Refferal Code" />
-                <label for="referred_by_code">Refferal Code (optional)</label>
-              </div>
-                <div class="form-floating mb-4">
-                <textarea name="interest" class="form-control  rounded-3" id="interestTop" placeholder="Tell us..." style="height: 70px"></textarea>
-                <label for="interestTop">What interests you about Zikbuy?</label>
-              </div> 
-              <div class="d-grid">
-                <button type="submit" class="btn green-btn btn-lg">
-                  <i class="fas fa-envelope-open-text me-2"></i> Join Waitlist
-                </button>
-              </div>
-              <p class="text-center text-dark-emphasis mt-3 small">Your information is secure and will never be shared with third parties.</p>
-            </form>
-          </div> -->
         </div>
         
       </div>
@@ -161,148 +131,263 @@
   </section>
 
   <!-- Why Us Section -->
-  <section class="why-us bg-white py-5" id="features">
-    <div class="container-lg text-center">
-      <button class="text-dark-emphasis fw-semibold bg-white shadow-sm rounded-5 px-4 my-4 btn" style="cursor: default;">
-        <i class="fas fa-bolt text-info"></i> Why Zikbuy
-      </button>
-      <p class="text-dark-emphasis fs-6">
-        Zikbuy uses intelligent algorithms to recommend products based on your interests, browsing behavior, and shopping trends.
-      </p>
-      <div class="d-flex justify-content-center">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4 pt-4 justify-content-center w-7 w-100">
-          <div class="col">
-            <div class="card border-0 text-dark-emphasis bg-white shadow p-4 h-100 rounded-4">
-              <div class="icon-circle mb-3"><i class="fas fa-user-cog text-green"></i></div>
-              <h4 class="fw-semibold text-black">Personalized Shopping</h4>
-              <p class="text-black">Our AI curates products tailored to your taste, helping you discover exactly what you want — faster and smarter.</p>
-            </div>
+<section class="why-us bg-white py-5 why-us" id="features">
+  <div class="container-lg text-center">
+    <button class="text-dark fw-semibold text- bg-white shadow-sm rounded-5 px-4 my-4 btn" style="cursor: default;">
+      <i class="fas fa-bolt text-info"></i> Why Zikbuy
+    </button>
+    <!-- <p class="text-light fs-5 bg-dark p-2">
+      Zikbuy uses intelligent algorithms to recommend products based on your interests, browsing behavior, and shopping trends.
+    </p> -->
+    <div class="d-flex justify-content-center">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4 pt-4 justify-content-center w-7 w-100">
+        <!-- Feature Card -->
+        <div class="col animate__animated animate__bounceInUp">
+          <div class="card feature-card border-0 text-light bg-white shadow p-4 h-100 rounded-4">
+            <div class="icon-circle mb-3"><i class="fas fa-user-cog text-green"></i></div>
+            <h4 class="fw-semibold text- text-black">Personalized Shopping</h4>
+            <p class="text-black">Our AI curates products tailored to your taste, helping you discover exactly what you want — faster and smarter.</p>
           </div>
-          <div class="col">
-            <div class="card border-0 text-dark-emphasis bg-white shadow p-4 h-100 rounded-4">
-              <div class="icon-circle mb-3"><i class="fas fa-th-large text-green"></i></div>
-              <h4 class="fw-semibold text-black">50+ Categories</h4>
-              <p class="text-black">From tech to fashion, home décor to wellness — explore a wide variety of curated collections.</p>
-            </div>
+        </div>
+        <!-- Feature Card -->
+        <div class="col animate__animated animate__bounceInUp animate__delay-1s">
+          <div class="card feature-card border-0 text-light bg-white shadow p-4 h-100 rounded-4">
+            <div class="icon-circle mb-3"><i class="fas fa-th-large text-green"></i></div>
+            <h4 class="fw-semibold text- text-black">50+ Categories</h4>
+            <p class="text-black">From tech to fashion, home décor to wellness — explore a wide variety of curated collections.</p>
           </div>
-          <div class="col">
-            <div class="card border-0 text-dark-emphasis bg-white shadow p-4 h-100 rounded-4">
-              <div class="icon-circle mb-3"><i class="fas fa-lock text-green"></i></div>
-              <h4 class="fw-semibold text-black">Fast & Secure Checkout</h4>
-              <p class="text-black">Experience seamless payments and quick checkouts, protected by industry-grade security.</p>
-            </div>
+        </div>
+        <!-- Feature Card -->
+        <div class="col animate__animated animate__bounceInUp animate__delay-2s">
+          <div class="card feature-card border-0 text-light bg-white shadow p-4 h-100 rounded-4">
+            <div class="icon-circle mb-3"><i class="fas fa-lock text-green"></i></div>
+            <h4 class="fw-semibold text- text-black">Fast & Secure Checkout</h4>
+            <p class="text-black">Experience seamless payments and quick checkouts, protected by industry-grade security.</p>
           </div>
-          <div class="col">
-            <div class="card border-0 text-dark-emphasis bg-white shadow p-4 h-100 rounded-4">
-              <div class="icon-circle mb-3"><i class="fas fa-lock text-green"></i></div>
-              <h4 class="fw-semibold text-black">Fast & Secure Checkout</h4>
-              <p class="text-black">Experience seamless payments and quick checkouts, protected by industry-grade security.</p>
-            </div>
+        </div>
+        <!-- Feature Card -->
+        <div class="col animate__animated animate__bounceInUp animate__delay-3s">
+          <div class="card feature-card border-0 text-light bg-white shadow p-4 h-100 rounded-4">
+            <div class="icon-circle mb-3"><i class="fas fa-users text-green"></i></div>
+            <h4 class="fw-semibold text- text-black">Community-Driven</h4>
+            <p class="text-black">Zikbuy grows with your referrals. Invite friends, earn points, and become part of our early user ecosystem.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Who it's for Section -->
-  <section class="waitlist bg-light py-5">
-    <div class="container text-center">
-      <button class="text-dark-emphasis fw-semibold bg-white shadow-sm rounded-5 px-4 my-4 btn" style="cursor: default;">
-        <i class="fas fa-users text-warning"></i> Who it's for
-      </button>
-      <h1 class="fw-medium"><span class="text-gradient">Anyone that wants to sell or buy</span></h1>
-      <p class="text-dark-emphasis fs-6">From buyers to freelancers, Zikbuy works for you.</p>
-      <div class="d-flex justify-content-center">
-        <div class="row row-cols-1 row-cols-md-3 g-4 pt-4 w-100">
-          <div class="col">
-            <a href="plumbing.html" class="text-decoration-none text-reset">
-              <div class="service-card shadow">
-                <div class="service-icon"><i class="fas fa-tools text-green"></i></div>
-                <h5>Freelancers</h5>
-                <p>Fixing leaks, pipes, water systems, and more.</p>
-              </div>
-            </a>
+  <section class="bg-light py-5">
+  <div class="container text-center">
+    <button class="text-dark fw-semibold text- bg-white shadow-sm rounded-5 px-4 my-4 btn" style="cursor: default;">
+      <i class="fas fa-users text-warning"></i> Features
+    </button>
+   <h1 class="fw-medium">
+  <span class="text-gradient">For anyone who wants to shop or get work done</span>
+</h1>
+<p class="text-dark fs-6">
+  Whether you're buying quality products or hiring trusted professionals to handle your tasks — Zikbuy connects you to what you need.
+</p>
+
+    <div class="d-flex justify-content-center">
+      <div class="row row-cols-1 row-cols-md-3 g-4 pt-4 w-100">
+        <!-- Freelancer -->
+        <div class="col animate__animated animate__fadeInUp">
+            <div class="service-card shadow border-glow">
+              <div class="service-icon"><i class="fas fa-tools text-green"></i></div>
+              <h5>Hire Professionals</h5>
+              <p>Trusted professionals that gets the job done.</p>
+            </div>
+        </div>
+
+        <!-- Buyers -->
+        <div class="col animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="service-card shadow border-glow">
+              <div class="service-icon"><i class="fas fa-shopping-cart text-green"></i></div>
+              <h5>Buyers</h5>
+              <p>Browse a variety of quality goods across dozens of product categories.</p>
+            </div>
+        </div>
+
+        <!-- Sellers -->
+        <div class="col animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="service-card shadow border-glow">
+              <div class="service-icon"><i class="fas fa-gift text-green"></i></div>
+              <h5>Sellers</h5>
+              <p>Launch your store, reach new customers, and grow your business fast.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-white py-5" id="how-it-works">
+  <div class="container text-center">
+    <button class="text-dark fw-semibold bg-white shadow-sm rounded-5 px-4 my-4 btn" style="cursor: default;">
+      <i class="fas fa-rocket text-success me-2"></i> How It Works
+    </button>
+    <h1 class="fw-medium"><span class="text-gradient">Get Started in 3 Simple Steps</span></h1>
+    <p class="text-dark fs-6">
+      Be among the first to join Zikbuy and earn rewards while we build the future of digital commerce and services.
+    </p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 pt-4">
+      
+      <!-- Step 1 -->
+      <div class="col animate__animated animate__fadeInUp">
+        <div class="card step-card border-0 shadow-sm p-4 h-100 rounded-4">
+          <div class="card-body text-center">
+            <div class="icon-circle bg-light-success text-success mb-3 mx-auto">
+              <i class="fas fa-user-plus fa-lg"></i>
+            </div>
+            <h5 class="fw-semibold text-light">Sign Up</h5>
+            <p class="text-light small">
+              Create your free Zikbuy account to start exploring digital services and deals near you.
+            </p>
           </div>
-          <div class="col">
-            <a href="fashion.html" class="text-decoration-none text-reset">
-              <div class="service-card shadow">
-                <div class="service-icon"><i class="fas fa-shopping-cart text-green"></i></div>
-                <h5>Buyers</h5>
-                <p>Custom tailoring and fashion design services.</p>
-              </div>
-            </a>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+        <div class="card step-card border-0 shadow-sm p-4 h-100 rounded-4">
+          <div class="card-body text-center">
+            <div class="icon-circle bg-light-success text-success mb-3 mx-auto">
+              <i class="fas fa-hand-pointer fa-lg"></i>
+            </div>
+            <h5 class="fw-semibold text-light">Choose a Service</h5>
+            <p class="text-light small">
+              From shopping to professionals, select the services you need from our growing network.
+            </p>
           </div>
-          <div class="col">
-            <a href="electrical.html" class="text-decoration-none text-reset">
-              <div class="service-card shadow">
-                <div class="service-icon"><i class="fas fa-gift text-green"></i></div>
-                <h5>Sellers</h5>
-                <p>Wiring, installation, repairs, and maintenance.</p>
-              </div>
-            </a>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="col animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+        <div class="card step-card border-0 shadow-sm p-4 h-100 rounded-4">
+          <div class="card-body text-center">
+            <div class="icon-circle bg-light-success text-success mb-3 mx-auto">
+              <i class="fas fa-bolt fa-lg"></i>
+            </div>
+            <h5 class="fw-semibold text-light">Get it Done</h5>
+            <p class="text-light small">
+              Enjoy fast, secure, and reliable service — whether you're buying or selling.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5 bg-light" id="waitlist">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-gradient">Join the ZIKBUY Waitlist</h2>
+      <p class="text-dark-emphasis fs-6">Get early access and be the first to experience stress-free hiring with verified professionals.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Step 1 -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100 rounded-4">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <i class="bi bi-pencil-square fs-1 text-success"></i>
+            </div>
+            <h5 class="fw-semibold text-white">Step 1: Fill the Form</h5>
+            <p class="text-white">Enter your name and email to reserve your spot. It only takes a few seconds.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100 rounded-4">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <i class="fas fa-user-plus fs-1 text-success"></i>
+            </div>
+            <h5 class="fw-semibold text-white">Step 2: Refer a Friend and Earn Points</h5>
+            <p class="text-white">Refer a friend and earn x10 point for every referral.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow h-100 rounded-4">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <i class="bi bi-stars fs-1 text-success"></i>
+            </div>
+            <h5 class="fw-semibold text-white">Step 3: Get Notified</h5>
+            <p class="text-white">You’ll be notified once we launch. Early supporters get priority access and special perks.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Bottom Waitlist Form -->
-  <!-- <section class="waitlist bg-white py-5" id="waitlist">
-    <div class="container text-center">
-      <button class="text-dark-emphasis fw-semibold bg-white shadow-sm rounded-5 px-4 my-4 btn" style="cursor: default;">
-        <i class="fas fa-shopping-cart text-warning"></i> Choose Zikbuy
-      </button>
-      <h1 class="fw-medium"><span class="text-gradient">Seen enough?</span><br>Shop smarter.</h1>
-      <div class="d-flex justify-content-center pt-3 flex-wrap gap-3">
-        <button class="text-dark-emphasis fs-6 fw-semibold bg-white shadow rounded-5 px-4 py-2 btn"><i class="fas fa-check-circle text-green"></i> Shop easy</button>
-        <button class="text-dark-emphasis fs-6 fw-semibold bg-white shadow rounded-5 px-4 py-2 btn"><i class="fas fa-check-circle text-green"></i> Sell fast</button>
-        <button class="text-dark-emphasis fs-6 fw-semibold bg-white shadow rounded-5 px-4 py-2 btn"><i class="fas fa-check-circle text-green"></i> Quick services</button>
-      </div>
-      <div class="card shadow-lg border-0 rounded-4 p-4 bg-white w-100 w-md-75 w-lg-50 mx-auto mt-5">
-        <h4 class="text-center py-2">Join the Waitlist</h4>
-        <small class="text-dark-emphasis text-center d-block fw-medium pb-4">Be the first to experience seamless marketing</small>
-        <form id="waitlistFormBottom" method="post">
-          <div class="form-floating mb-3">
-            <input type="text" name="username" class="form-control  rounded-3" id="fullNameBottom" placeholder="Full Name" required />
-            <label for="fullNameBottom">Full Name *</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="email" name="email" class="form-control  rounded-3" id="emailBottom" placeholder="Email" required />
-            <label for="emailBottom">Email Address *</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="text" name="refferal" class="form-control  rounded-3" id="refferalBottom" placeholder="refferal" />
-            <label for="refferalBottom">refferal (optional)</label>
-          </div>
-          <div class="form-floating mb-4">
-            <textarea name="interest" class="form-control  rounded-3" id="interestBottom" placeholder="Tell us..." style="height: 70px"></textarea>
-            <label for="interestBottom">What interests you about Zikbuy?</label>
-          </div>
-          <div class="d-grid">
-            <button type="submit" class="btn green-btn btn-lg">
-              <i class="fas fa-envelope-open-text me-2"></i> Join Waitlist
-            </button>
-          </div>
-          <p class="text-center text-dark-emphasis mt-3 small">Your information is secure and will never be shared with third parties.</p>
-        </form>
-      </div>
-    </div>
-  </section> -->
+
 
   <!-- Footer -->
-  <footer class="container py-4 border-top">
-    <div class="d-flex flex-wrap justify-content-between align-items-center">
-      <div class="d-flex align-items-center">
-        <a href="#" class="me-2 text-dark-emphasis"><i class="fas fa-cart-shopping text-green fa-lg"></i></a>
-        <span class="text-dark-emphasis">© 2025 Zikbuy, Inc.</span>
-      </div>
-      <ul class="nav list-unstyled d-flex">
-        <li class="ms-3"><a class="text-dark-emphasis" href="#"><i class="fab fa-instagram"></i></a></li>
-        <li class="ms-3"><a class="text-dark-emphasis" href="#"><i class="fab fa-facebook"></i></a></li>
-        <li class="ms-3"><a class="text-dark-emphasis" href="#"><i class="fab fa-twitter"></i></a></li>
-      </ul>
+<footer class="container py-5 border-top">
+  <div class="row align-items-center justify-content-between">
+    <!-- Logo & Copyright -->
+    <div class="col-md-6 d-flex align-items-center mb-3 mb-md-0">
+      <i class="fas fa-cart-shopping text-success fa-lg me-2"></i>
+      <span class="text-muted">© 2025 Zikbuy, Inc. All rights reserved.</span>
     </div>
-  </footer>
+
+    <!-- Navigation Links -->
+    <!-- <div class="col-md-3 mb-3 mb-md-0">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+        <li class="nav-item"><a href="#" class="nav-link p-0 text-muted">Contact</a></li>
+        <li class="nav-item"><a href="#" class="nav-link p-0 text-muted">Terms</a></li>
+        <li class="nav-item"><a href="#" class="nav-link p-0 text-muted">Privacy</a></li>
+      </ul>
+    </div> -->
+
+    <!-- Socials -->
+    <div class="col-md-3 text-md-end">
+      <a href="https://www.instagram.com/zikbuy?igsh=YzljYTk1ODg3Zg==" class="text-muted me-3" target="_blank" rel="noopener">
+        <i class="fab fa-instagram fa-lg"></i>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61578109007844&mibextid=ZbWKwL" class="text-muted me-3" target="_blank" rel="noopener">
+        <i class="fab fa-facebook fa-lg"></i>
+      </a>
+      <a href="https://x.com/ZikBuy95761?t=0xa1g6hbzA12c9MVCfa-JA&s=09" class="text-muted me-3" target="_blank" rel="noopener">
+        <i class="fab fa-twitter fa-lg"></i>
+      </a>
+      <a href="https://vm.tiktok.com/ZMStcjtqU/" class="text-muted me-3" target="_blank" rel="noopener">
+        <i class="fab fa-tiktok fa-lg"></i>
+      </a>
+      <a href="https://t.me/zikbuy_online_buyandhire" class="text-muted me-3" target="_blank" rel="noopener">
+        <i class="fab fa-telegram fa-lg"></i>
+      </a>
+      <a href="https://whatsapp.com/channel/0029Vb69Jau6BIEqxep1JR2e" class="text-muted" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp fa-lg"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Support Email -->
+  <div class="text-center pt-4">
+    <small class="text-muted">Need help? Contact us at <a href="mailto:zikbuy1@gmail.com" class="text-success fw-semibold">zikbuy1@gmail.com</a></small>
+  </div>
+</footer>
+
 
 
 
@@ -503,7 +588,6 @@ document.getElementById('signup').addEventListener('submit', async function (e) 
   });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
 </body>
 </html>

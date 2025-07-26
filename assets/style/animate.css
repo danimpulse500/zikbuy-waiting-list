@@ -1,0 +1,44 @@
+/* Animate.css CDN required in <head> */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+
+.feature-card {
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover beam border effect */
+.feature-card:hover {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 0 0 3px rgba(0, 255, 128, 0.2);
+  border-image: linear-gradient(90deg, #00cc66, #33cc99) 1;
+  transform: scale(1.02);
+  z-index: 2;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #0f9d58, #0abb92);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.bg-light-success {
+  background-color: #e6f4ea;
+}
+
+.border-glow {
+  border: 1px solid rgba(0, 200, 83, 0.15);
+  box-shadow: 0 0 10px rgba(0, 200, 83, 0.1);
+}
